@@ -1,0 +1,65 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.4.RELEASE'
+	id "org.sonarqube" version "2.6.2"
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.corelogic.homevisit'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+sonarqube {
+    properties {
+        property 'sonar.exclusions', "**/generated/**"
+    }
+}
+
+repositories {
+	mavenCentral()
+	maven { url "https://repo.corelogic.net/nexus/content/groups/m2/" }
+	maven { url 'http://repo.spring.io/milestone/' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-integration'
+
+
+	implementation 'org.springframework.boot:spring-boot-starter-quartz'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'com.microsoft.sqlserver:mssql-jdbc:7.2.2.jre8'
+
+	compile 'org.springframework.integration:spring-integration-jdbc'
+	compile 'org.springframework.integration:spring-integration-http'
+	compile group: 'com.opencsv', name: 'opencsv', version: '5.0'
+	compile group: 'net.minidev', name: 'json-smart', version: '2.3'
+	compile 'com.corelogic.clp.starters:clp-config-starter:2.2.2'
+	implementation 'org.springframework.cloud:spring-cloud-starter-oauth2:2.1.4.RELEASE'
+
+
+	compile 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.integration:spring-integration-test'
+	testImplementation 'org.springframework.integration:spring-integration-test-support'
+	testImplementation 'org.springframework.security:spring-security-test'
+	implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+	testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.2.0'
+
+}
+
+test {
+	useJUnitPlatform()
+}

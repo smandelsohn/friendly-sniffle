@@ -1,0 +1,21 @@
+version: "3"
+# to begin and be redirected to authentication for everything to work user the following url:
+# http://localhost:8080/saml/sp/select
+
+
+services:
+  config-server:
+    image: hyness/spring-cloud-config-server
+    volumes:
+     - ../clp-cloud-config/homevisit-accuservice:/api
+    ports:
+     - 8888:8888
+    environment:
+     - SPRING_PROFILES_ACTIVE=native
+     - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:/api
+     - MANAGEMENT_SECURITY_ENABLED=false
+     - SPRING_CLOUD_CONFIG_SERVER_ENCRYPT_ENABLED=false
+
+
+
+
