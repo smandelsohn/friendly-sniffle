@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.corelogic.homevisit.accuservice.component.SecurityTokenHolderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-09T17:19:32" hostname="C02XH1CYJG5M" time="1.006">
-  <properties/>
-  <testcase name="isExpired()" classname="com.corelogic.homevisit.accuservice.component.SecurityTokenHolderTest" time="1.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

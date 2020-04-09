@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.corelogic.homevisit.accuservice.service.impl.AccuZipCSVServiceImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-09T17:19:47" hostname="C02XH1CYJG5M" time="0.01">
-  <properties/>
-  <testcase name="createScvFileData()" classname="com.corelogic.homevisit.accuservice.service.impl.AccuZipCSVServiceImplTest" time="0.003"/>
-  <testcase name="createScvFileHeader()" classname="com.corelogic.homevisit.accuservice.service.impl.AccuZipCSVServiceImplTest" time="0.0"/>
-  <testcase name="parseScvFile()" classname="com.corelogic.homevisit.accuservice.service.impl.AccuZipCSVServiceImplTest" time="0.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
